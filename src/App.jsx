@@ -1,10 +1,21 @@
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/views/Header";
+import Home from "./pages/Home";
+import { default as Login } from "./pages/Login";
+import Profile from "./pages/Profile";
+import Register from "./pages/Register";
+import("preline");
+
 function App() {
   return (
-    <>
-      <h1 className=" text-center text-3xl mt-10 text-red-600">
-        Online Judge Project
-      </h1>
-    </>
+    <Routes>
+      <Route element={<Header />}>
+        <Route path="/" element={<Home />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+      </Route>
+    </Routes>
   );
 }
 
